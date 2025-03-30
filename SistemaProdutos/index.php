@@ -38,12 +38,13 @@
           </button></a
         >
 
-        <form class="d-flex" role="search" style="width: 25em">
+        <form class="d-flex" role="search" style="width: 25em" action="php/CRUD/pesquisar.php" method="post">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Pesquisar"
             aria-label="Search"
+            name="nome"
           />
           <button
             class="btn btn-primary"

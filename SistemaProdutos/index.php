@@ -38,17 +38,18 @@
           </button></a
         >
 
-        <form class="d-flex" role="search" style="width: 25em" action="php/CRUD/pesquisar.php" method="post">
+
+        <form class="d-flex" role="search" style="width: 25em" onkeyup="filterTable()" method="post">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Pesquisar"
             aria-label="Search"
-            name="nome"
+            id="searchInput"
           />
           <button
             class="btn btn-primary"
-            type="submit"
+            type="button"
             style="background-color: rgb(23, 32, 195)"
           >
             <svg
@@ -66,6 +67,30 @@
             </svg>
           </button>
         </form>
+
+        <script>
+          function filterTable() {
+            var input, filter, table, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+              tr[i].style.display = "none";
+              td = tr[i].getElementsByTagName("td");
+              for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                  txtValue = td[j].textContent || td[j].innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        </script>
       </div>
     </nav>
 

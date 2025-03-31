@@ -39,7 +39,7 @@
         <?php
         require("conexao.php");
 
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $sql = "SELECT * FROM produtos WHERE id = $id";
 
         $result = mysqli_query($c, $sql);

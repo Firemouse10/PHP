@@ -29,7 +29,7 @@
             type="button"
             class="btn btn-success"
             style="
-              margin-left: 500px;
+              margin-left: 53em;
               height: 42px;
               background-color: #027610 !important;
             "
@@ -40,16 +40,19 @@
 
 
         <form class="d-flex" role="search" style="width: 25em" onkeyup="filterTable()" method="post">
+        <form class="d-flex" role="search" style="width: 25em" action="php/CRUD/pesquisar.php" method="post">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Pesquisar"
             aria-label="Search"
             id="searchInput"
+            name="nome"
           />
           <button
             class="btn btn-primary"
             type="button"
+            type="submit"
             style="background-color: rgb(23, 32, 195)"
           >
             <svg

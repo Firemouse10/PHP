@@ -26,7 +26,7 @@
       </a>
     </div>
   </nav>
-  </nav>
+
 
   <div class="container" style="width: 80%;">
     <div class="row">

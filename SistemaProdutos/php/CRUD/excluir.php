@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rDelete = mysqli_query($c, $sqlDelete);
 
     if ($rDelete) {
-        echo "Produto deletado com sucesso!";
         header("refresh:0; url=../../../SistemaProdutos/index.php");
     } else {
         die("Erro: " . mysqli_error($c));

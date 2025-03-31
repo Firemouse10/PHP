@@ -70,7 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
 
-        <h1>felipe cusao</h1>
     </body>
 
     </html>

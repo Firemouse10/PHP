@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($rDelete) {
         echo "Produto deletado com sucesso!";
-        header("refresh:5; url=../../../SistemaProdutos/index.php");
+        header("refresh:0; url=../../../SistemaProdutos/index.php");
     } else {
         die("Erro: " . mysqli_error($c));
     }

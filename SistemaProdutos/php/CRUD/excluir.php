@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <hr>
                 <form method="post">
                     <button type="submit" class="btn btn-danger">Excluir</button>
-                    <a href="index.php" class="btn btn-secondary" onclick="window.location.href='../../../SistemaProdutos/index.php'; return false;">Cancelar</a>
+                    <a href="index.php" class="btn btn-secondary" onclick="window.location.href='excluirConfirm.php'; return false;">Cancelar</a>
                 </form>
             </div>
         </div>

@@ -20,33 +20,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($rDelete) {
         echo "Produto deletado com sucesso!";
-        header("refresh:5; url=../../../SistemaProdutos/index.php");
+        header("refresh:0; url=../../../SistemaProdutos/index.php");
     } else {
         die("Erro: " . mysqli_error($c));
     }
     mysqli_close($c);
 } else {
-    ?>
+?>
     <!DOCTYPE html>
     <html lang="pt">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Confirmar Exclusão</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
-    <body>
-    <nav class="navbar" style="background-color: #5271ff !important">
 
-        <div class="container-fluid">
-        <a href="../../index.php" class="navbar-brand">
-            <img
-            src="../../img/logo.png"
-            id="logo"
-            alt="logo"
-            style="height: 60px; width: 260px; padding-top: px" />
-        </a>
-        </div>
+    <body>
+        <nav class="navbar" style="background-color: #5271ff !important">
+
+            <div class="container-fluid">
+                <a href="../../index.php" class="navbar-brand">
+                    <img
+                        src="../../img/logo.png"
+                        id="logo"
+                        alt="logo"
+                        style="height: 60px; width: 260px; padding-top: px" />
+                </a>
+            </div>
         </nav>
         </nav>
 
@@ -69,7 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
     </body>
+
     </html>
-    <?php
+<?php
 }
 ?>

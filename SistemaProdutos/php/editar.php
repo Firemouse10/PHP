@@ -1,3 +1,18 @@
+<?php
+require("conexao.php");
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM produtos WHERE id = $id";
+
+$result = mysqli_query($c, $sql);
+
+$produto = mysqli_fetch_assoc($result);
+
+mysqli_close($c);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -36,17 +51,8 @@
     <div class="row">
       <div class="col-12" style="text-align: center; padding-top: 30px;">
         <h3 style="margin-bottom: 20px;">Editar Produto</h3>
-        <?php
-        require("conexao.php");
-
-        $id = $_POST['id'];
-        $sql = "SELECT * FROM produtos WHERE id = $id";
-
-        $result = mysqli_query($c, $sql);
-
-        while ($produto = mysqli_fetch_assoc($result)) {
-        ?>
-        <form action="./editar.php" method="post" style="width: 50%; margin: 0 auto;">
+        <form action="atualizar.php" method="post" style="width: 50%; margin: 0 auto;">
+        <input type="hidden" name="id" value="<?php echo $produto["id"]; ?>">
           <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp" value="<?php echo $produto["nome"]; ?>" required>
@@ -63,16 +69,15 @@
             <label for="quantidade" class="form-label">Quantidade</label>
             <input type="number" class="form-control" id="quantidade" name="quantidade" value="<?php echo $produto["qtd"]; ?>" required>
           </div>
-          <input type="hidden" name="id" value="<?php echo $produto["id"]; ?>">
+          
           <button type="submit" class="btn btn-primary">Editar</button>
         </form>
-        <?php
-        }
-        mysqli_close($c);
-        ?>
-
+      </div>
+    </div>
+  </div>
 
 
 </body>
 
 </html>
+
